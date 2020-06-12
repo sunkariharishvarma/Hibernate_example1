@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dao.Dao;
 import model.Student;
-@WebServlet(urlPatterns = {"/reqreg","/reqsearch","/reqviewallusers","/reqUpdate","/updatefrom"})
+@WebServlet(urlPatterns = {"/reqreg","/reqsearch","/reqviewallusers","/reqUpdate","/updateform"})
 public class Controller extends HttpServlet
 {
 	public void doPost(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException
@@ -60,7 +60,7 @@ public class Controller extends HttpServlet
 			RequestDispatcher rd=req.getRequestDispatcher("viewStudents.jsp");
             rd.forward(req, res);
 		}
-		if(path.equals("/updatefrom"))
+		if(path.equals("/updateform"))
 		{
 			Student s=new Student();
 		  s.setEmail(req.getParameter("id"));
